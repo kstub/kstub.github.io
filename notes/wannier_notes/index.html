@@ -3,7 +3,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <title>wannier-notes</title>
+    <title>wannier-functions-notes</title>
     <meta name="description" content="">
     <meta name="author" content='Kevin Stubbs'>
 
@@ -161,11 +161,11 @@ L^2_{\bm{k}}(\Omega) := \{ f : f \in L^2(\Omega) \text{ and } f(\bm{x} + \bm{v}_
 \]
 Since the domain \(\Omega\) is compact, if \(H\) satisifies some mild technical conditions, it can be shown that the operator \(H\) has a countable, orthogonal basis of eigenfunctions \(\phi_{n,\bm{k}} \in L^2_{\bm{k}}(\Omega)\) where \(n \in \N\). Furthermore, the collection \(\{ \phi_{n,\bm{k}}(\bm{x}) : n \in \N, \bm{k} \in \Omega^* \}\) is complete in \(L^2(\R^2)\). This collection of functions are known as the <strong>Bloch functions</strong> for \(H\).</p>
 <h4 id="the-problem-of-finding-wannier-functions">The Problem of Finding Wannier Functions</h4>
-<p>Now that we have defined the collection \(\{ \psi_{n,\bm{k}}(\bm{x}) \}\) we can define the problem of finding well localized Wannier functions. We begin with two definitions</p>
+<p>Now that we have defined the collection \(\{ \phi_{n,\bm{k}}(\bm{x}) \}\) we can define the problem of finding well localized Wannier functions. We begin with two definitions</p>
 <blockquote>
 <p><strong>Definition</strong>: Fix some \(N \in \N\), define the projector \(P\) as the span onto the first \(N\) bands of the Hamiltonian \(H\) defined as follows</p>
 <p>\[\begin{aligned}
-&amp; P(\bm{k}) := \sum_{n=1}^N \vert \psi_{n,\bm{k}} \rangle \langle \psi_{n,\bm{k}} \vert \\[2ex]
+&amp; P(\bm{k}) := \sum_{n=1}^N \vert \phi_{n,\bm{k}} \rangle \langle \phi_{n,\bm{k}} \vert \\[2ex]
 &amp; P := \int^{\oplus}_{\Omega^*} P(\bm{k}) \text{d}\bm{k}
 \end{aligned}\]</p>
 <p>Where \(\int^{\oplus}_{\Omega^*} \text{d}\bm{k}\) denotes the &ldquo;direct integral&rdquo; (continuous version of direct sum) over the Brillouin zone.</p>
@@ -182,9 +182,9 @@ Since the domain \(\Omega\) is compact, if \(H\) satisifies some mild technical 
 <blockquote>
 <p><strong>Problem Statement</strong>: Find a generalized Wannier basis which is as localized as possible (\(s\) localized for \(s \gg 0\) or exponentially localized).</p>
 </blockquote>
-<p>This problem is most well understood when the Hamiltonian \(H\) has a gap between the \(N\) and \(N+1\) band<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>. Formally, if \(E_{n,\bm{k}}\) is the energy eigenvalue of \(\psi_{n,\bm{k}}\):
+<p>This problem is most well understood when the Hamiltonian \(H\) has a gap between the \(N\) and \(N+1\) band<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>. Formally, if \(E_{n,\bm{k}}\) is the energy eigenvalue of \(\phi_{n,\bm{k}}\):
 \[
-H \psi_{n,\bm{k}} = E_{n,\bm{k}} \psi_{n,\bm{k}}
+H \psi_{n,\bm{k}} = E_{n,\bm{k}} \phi_{n,\bm{k}}
 \]
 we say that \(H\) has a gap of size \(g\) between the \(N\) and \(N+1\) band if
 \[
@@ -242,17 +242,17 @@ where the boundary terms from integration by parts vanish since \(R \in \Lambda\
 \[
 \| (x_1 - R_1) w_{n,\bm{R}} \|_{L^2_x} \leq \sup_{\bm{k}} \| \partial_{k_1} u_{n,\bm{k}} \|_{L^2_x}.
 \]
-In particular, if \(u_{n,\bm{k}}\) is continuously differentiable in \(k_1\) then \(w_{n,\bm{R}}\) decays at least as fast as \(\vert x_2 - R_1 \vert^{-1}\) in the x-direction. If we repeat this argument for \((x_2 - R_2) w_{n,\bm{R}}\), we conclude that \(u_{n,\bm{k}}\) is continuously differentiable in \(k_2\) then \(w_{n,\bm{R}}\) decays at least as fast as \(\vert x_2 - R_2 \vert^{-1}\) in the y-direction.</p>
+In particular, if \(u_{n,\bm{k}}\) is continuously differentiable in \(k_1\) then \(w_{n,\bm{R}}\) decays at least as fast as \(\vert x_1 - R_1 \vert^{-1}\) in the x-direction. If we repeat this argument for \((x_2 - R_2) w_{n,\bm{R}}\), we conclude that if \(u_{n,\bm{k}}\) is continuously differentiable in \(k_2\) then \(w_{n,\bm{R}}\) decays at least as fast as \(\vert x_2 - R_2 \vert^{-1}\) in the y-direction.</p>
 <p>Repeating integration by parts \(\ell\) times, we can easily see that \(u_{n,\bm{k}}\) being \(\ell\) times continuously differentiable implies that the corresponding Wannier function decays like \(\vert{} \bm{x} - \bm{R} \vert{}^{-\ell}\). Futhermore, if \(u_{n,\bm{k}}\) is analytic as a function of \(\bm{k}\) in a strip, then (a generalization of) the Paley-Wiener theorem implies that the corresponding Wannier functions \(\{ w_{n,\bm{R}} \}\) decay exponentially quickly.</p>
 <h4 id="the-gauge-freedom">The Gauge Freedom</h4>
-<p>As we saw in the previous section, if we can show that the periodic Bloch functions \(\{ u_{n,\bm{k}} \}\) are smooth as a function of \(\bm{k}\) then we can show that the corresponding Wannier functions decay quickly in space. In fact, since the Fourier transform is invertible, this is an if and only if statement: The Wannier functions \(\{ w_{n,\bm{R}} \}\) defined as above decay quickly in space if and only if the functions \(\{ u_{n,\bm{k}} \}\) are smooth and periodic in \(\bm{k}\).</p>
-<p>If there were a unique choice of the functions \(u_{n,\bm{k}}\) then this would essentially be the end of the story, but (thankfully) there is some freedom in how we define the periodic Bloch functions. Recall that we defined the Bloch functions \(\{ \psi_{n,\bm{k}} \}\) as joint eigenfunctions of the Hamiltonian \(H\) and translation. However, eigenfunctions are only defined up to a choice of complex phase. Therefore, we could have just as well defined \(\psi_{n,\bm{k}}\) and \(u_{n,\bm{k}}\) as follows:
+<p>As we saw in the previous section, if we can show that the periodic Bloch functions \(\{ u_{n,\bm{k}} \}\) are smooth as a function of \(\bm{k}\) then we can show that the corresponding Wannier functions decay quickly in space. In fact, since the Fourier transform and its inverse only differ by a choice of sign, this is an if and only if statement: The Wannier functions \(\{ w_{n,\bm{R}} \}\) defined as above decay quickly in space if and only if the functions \(\{ u_{n,\bm{k}} \}\) are smooth and periodic in \(\bm{k}\).</p>
+<p>If there were a unique choice of the functions \(u_{n,\bm{k}}\) then this would essentially be the end of the story, but (thankfully) there is some freedom in how we define the periodic Bloch functions. Recall that we defined the Bloch functions \(\{ \phi_{n,\bm{k}} \}\) as joint eigenfunctions of the Hamiltonian \(H\) and translation. However, eigenfunctions are only defined up to a choice of complex phase. Therefore, we could have just as well defined \(\phi_{n,\bm{k}}\) and \(u_{n,\bm{k}}\) as follows:
 \[\begin{aligned}
-&amp; \psi_{n,\bm{k}}(\bm{x}) \mapsto e^{i \theta_{n}(\bm{k})} \psi_{n,\bm{k}}(\bm{x}) \\[1ex]
+&amp; \phi_{n,\bm{k}}(\bm{x}) \mapsto e^{i \theta_{n}(\bm{k})} \phi_{n,\bm{k}}(\bm{x}) \\[1ex]
 &amp; u_{n,\bm{k}}(\bm{x}) \mapsto e^{i \theta_{n}(\bm{k})} u_{n,\bm{k}}(\bm{x})
 \end{aligned}\]
 where \(\theta_n(\bm{k})\) is any real valued function. Therefore, by carefully choosing the function \(\theta_n(\bm{k})\), we can hopefully improve the regularity of the periodic Bloch functions so that the resulting Wannier functions decay quickly in space.</p>
-<p>In practice, people have found that the regularity of \(u_{n,\bm{k}}\) can be improved even further if we allow the different bands to mix. That is we perform the transformation
+<p>When dealing with entangled bands, people have found that the regularity of \(u_{n,\bm{k}}\) can be improved even further if we allow the different bands to mix. That is, we perform the transformation
 \[
 u_{n,\bm{k}}(\bm{x}) \mapsto \sum_{m} u_{m,\bm{k}}(\bm{x}) U_{m,n}(\bm{k})
 \]
@@ -265,7 +265,7 @@ Typically, when we allow the different bands of the system to mix, the correspon
 <p>Based on the previous discussion on Wannier functions, it is clear that the problem of finding well localized Wannier functions is equivalent to the following:</p>
 <blockquote>
 <p><strong>Equivalent Problem Statment</strong>: Find a family of unitary matrices \(U(\bm{k}) \in \mathbb{C}^{N \times N}\) so that for each \(n\), the function
-\[\tilde{u}_{n, \bm{k}}(\bm{x}) = \sum_{m} u_{m,\bm{k}}(\bm{x}) U_{m,n}(\bm{k})\]
+\[\tilde{u}_{n, \bm{k}}(\bm{x}) := \sum_{m} u_{m,\bm{k}}(\bm{x}) U_{m,n}(\bm{k})\]
 is smooth and periodic in \(\bm{k}\).</p>
 </blockquote>
 <h4 id="parallel-transport-gauge--in-progress">Parallel Transport Gauge (IN PROGRESS)</h4>
@@ -280,7 +280,7 @@ is smooth and periodic in \(\bm{k}\).</p>
 P_{*}(\bm{k})(\bm{x}, \bm{y}) &amp; = \sum_{n=1}^N u_{n,\bm{k}}(\bm{x}) \overline{u_{n,\bm{k}}(\bm{y})} \\[1ex]
 &amp; = \sum_{n=1}^N e^{-i \bm{k} \cdot (\bm{x} - \bm{y})}  \phi_{n,\bm{k}}(\bm{x}) \overline{\phi_{n,\bm{k}}(\bm{y})}
 \end{aligned}\]
-So this projector differs slightly from the previous projector \(P(\bm{k})\). We would like to stress the quite surprising fact</p>
+So this projector differs slightly from the previous projector \(P(\bm{k})\). One can still show however that \(P_{*}(\bm{k})\) is analytic as a function of \(\bm{k}\). We would like to stress the quite surprising fact</p>
 <blockquote>
 <p><strong>Key Fact</strong>: Even though \(P_{*}(\bm{k})\) is analytic in \(\bm{k}\), this does <strong>does not</strong> imply that that \(u_{n,\bm{k}}\) is analytic and periodic in \(\bm{k}\) even when \(N = 1\).</p>
 </blockquote>
