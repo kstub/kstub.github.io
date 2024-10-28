@@ -2,19 +2,14 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>/</loc>
-    <lastmod>2021-09-22T10:15:35-07:00</lastmod>
+    <loc>https://kstub.github.io/categories/</loc>
   </url><url>
-    <loc>/notes/</loc>
-    <lastmod>2021-09-22T10:15:35-07:00</lastmod>
+    <loc>https://kstub.github.io/</loc>
   </url><url>
-    <loc>/notes/wannier_notes/</loc>
-    <lastmod>2021-09-22T10:15:35-07:00</lastmod>
+    <loc>https://kstub.github.io/research/</loc>
   </url><url>
-    <loc>/posts/</loc>
+    <loc>https://kstub.github.io/tags/</loc>
   </url><url>
-    <loc>/papers/</loc>
-  </url><url>
-    <loc>/teaching/</loc>
+    <loc>https://kstub.github.io/teaching/</loc>
   </url>
 </urlset>
