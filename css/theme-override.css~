@@ -1,0 +1,14 @@
+footer { font-size: 90%; }
+header { background: #A020F0; }
+
+
+#portrait {
+  min-width: 40px;
+  float: right;
+  padding: 30px;
+  display: block;
+}
+
+.article-meta, .menu a {
+    background: white;
+}
