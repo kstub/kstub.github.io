@@ -43,11 +43,11 @@
     }
 
     a {
-      color: #613DC1;
+      color: #A020F0;
     }
 
     header {
-      background: #613DC1;
+      background: #A020F0;
     }
 
     .article-meta, .menu a {
@@ -199,7 +199,7 @@ blockquote {
 .content-wrapper {
   padding: 0px 12px 0px 12px;
 }
-#foxy {
+#portrait {
   min-width: 40px;
   float: right;
   padding: 10px;
