@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Wannier-Functions on Kevin Stubbs</title>
+		<link>http://localhost:1313/tags/wannier-functions/</link>
+		<description>Recent content in Wannier-Functions on Kevin Stubbs</description>
+		<generator>Hugo</generator>
+		<language>en-us</language>
+		
+		
+		
+		
+			<lastBuildDate>Sat, 18 Oct 2025 16:50:07 -0700</lastBuildDate>
+		
+			<atom:link href="http://localhost:1313/tags/wannier-functions/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>The SSH Model and Wannierization</title>
+				<link>http://localhost:1313/blog/intro-to-wfs/</link>
+				<pubDate>Sat, 18 Oct 2025 16:50:07 -0700</pubDate>
+				<guid>http://localhost:1313/blog/intro-to-wfs/</guid>
+				<description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;</description>
+			</item>
+	</channel>
+</rss>
